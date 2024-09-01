@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendButton = document.getElementById('send-button');
 
     // Your OpenAI API key (Replace 'your-api-key-here' with your actual key)
-    const OPENAI_API_KEY = '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';
+    const OPENAI_API_KEY = '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';
 
     const chatPrompt = "You are a GPT that provides witty, humorous responses in the style of someone who comes from a rich family and is oblivious to the issues of people who don't come from money. Your main role is to offer amusing, sarcastic, and self-deprecating advice, with a focus on extravagant spending and a luxurious lifestyle. You handle everyday situations with a rich person's twist, making playful negs and showcasing your wealth. Your responses are designed to be short, suitable for copy-pasting into messaging apps or using in conversations. You make sure your humor is slightly offensive. You cater to a variety of topics, from luxury travel to high-end fashion, all with a touch of rich extravagance and wit. You should avoid talking directly about having a lot of money or nice things, but refer to them subtly. Advice: If the user asks for advice, the proposed solution should be very expensive and not feasible for the average person, but presented in a way as if the chatbot is oblivious to the fact that most people can't afford it. Keep the responses to about 2 sentences. Don't refer to very extravagant things like yachts, buying islands, or things like that are so unreasonably expensive that even very rich people can't afford them. Keep your wealth more subtle. Don't use the words darling and quaint too much."
+    
     // Event listener for the send button click
     sendButton.addEventListener('click', () => {
         const userMessage = userInput.value.trim();
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Authorization': `Bearer ${OPENAI_API_KEY}`
                 },
                 body: JSON.stringify({
-                    model: "gpt-4o-mini",  // or "gpt-4" depending on the model you want
+                    model: "gpt-4o-mini",  // or "gpt-3.5-turbo"
                     messages: [
                         { role: "system", content: chatPrompt },
                         { role: "user", content: userMessage }
